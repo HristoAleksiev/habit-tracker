@@ -28,5 +28,7 @@ pixela_push_pixel_args = {
     "quantity": "12",
 }
 
-response = requests.post(url=pixela_push_pixel_endpoint, json=pixela_push_pixel_args, headers=pixel_table_header)
+# response = requests.post(url=pixela_push_pixel_endpoint, json=pixela_push_pixel_args, headers=pixel_table_header)
+response = requests.put(url=f"{pixela_push_pixel_endpoint}/{pixela_push_pixel_args['date']}",
+                        json={"quantity": "12"}, headers=pixel_table_header)
 print(response.text)
